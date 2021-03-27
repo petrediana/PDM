@@ -56,3 +56,17 @@ C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.
 C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\obj\iPhoneSimulator\Debug\AppCursValutar.iOS.csproj.CopyComplete
 C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\obj\iPhoneSimulator\Debug\AppCursValutar.iOS.exe
 C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\obj\iPhoneSimulator\Debug\AppCursValutar.iOS.pdb
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\Microcharts.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\Microcharts.iOS.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\Microcharts.Forms.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\SkiaSharp.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\SkiaSharp.Views.iOS.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\SkiaSharp.Views.Forms.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\SQLite-net.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.nativelibrary.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.core.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\System.Buffers.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\System.Memory.dll
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.iOS\bin\iPhoneSimulator\Debug\System.Runtime.CompilerServices.Unsafe.dll

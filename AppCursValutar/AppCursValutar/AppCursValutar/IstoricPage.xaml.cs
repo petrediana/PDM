@@ -1,4 +1,5 @@
-﻿using Microcharts;
+﻿using AppCursValutar.Services.Date;
+using Microcharts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,30 +14,51 @@ namespace AppCursValutar
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class IstoricPage : ContentPage
     {
-        public IstoricPage()
+        private readonly DateTimeProvider _dateTimeProvider;
+        public IstoricPage(List<Curs> listaCurs)
         {
             InitializeComponent();
+            _dateTimeProvider = new DateTimeProvider();
+
+
+            pickerValute.ItemsSource = listaCurs.Select(curs => curs.Valuta).ToList();
+            pickerValute.SelectedItem = "EUR";
+
+            pickerValute.SelectedIndexChanged += PickerValute_SelectedIndexChanged;
+        }
+
+        private void PickerValute_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine($"Index Changed: {pickerValute.SelectedItem}");
+            ChangeGraphCurrency(pickerValute.SelectedItem.ToString());
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            List<Curs> listaCurs = new DaoCurs().ObtineCursValuta("EUR");
-            List<ChartEntry> dateGrafic = new List<ChartEntry>();
+            ChangeGraphCurrency("EUR");
+        }
 
-            foreach (var curs in listaCurs)
+        private void ChangeGraphCurrency(string valuta)
+        {
+            List<Curs> listaCurs = DaoCurs.Instance.ObtineCursValuta(valuta.ToUpper());
+            List<ChartEntry> dateGrafic = listaCurs.Select(curs => CreateChartEntry(curs)).ToList();
+
+
+            chartViewCurs.Chart = new LineChart
             {
-                dateGrafic.Add(
-                    new ChartEntry((float)curs.Valoare)
-                    {
-                        Label = curs.Data,
-                        ValueLabel = curs.Valoare.ToString()
-                    });
-            }
+                Entries = dateGrafic
+            };
+        }
 
-            chartViewCurs.Chart = new LineChart();
-            chartViewCurs.Chart.Entries = dateGrafic;
+        private ChartEntry CreateChartEntry(Curs curs)
+        {
+            return new ChartEntry((float)curs.Valoare)
+            {
+                Label = curs.Data,
+                ValueLabel = curs.Valoare.ToString()
+            };
         }
     }
 }

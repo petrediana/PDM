@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppCursValutar.Services.Date;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -11,10 +12,12 @@ namespace AppCursValutar
     public partial class MainPage : ContentPage
     {
         List<Curs> listaCurs;
+        private readonly DateTimeProvider _dateTimeProvider;
         public MainPage()
         {
             InitializeComponent();
-            
+            _dateTimeProvider = new DateTimeProvider();
+
         }
 
         protected override async void OnAppearing()
@@ -29,16 +32,16 @@ namespace AppCursValutar
             // TODO: o metoda care returneaza data de referinta
             // 
 
-            DaoCurs daoCurs = new DaoCurs();
-            listaCurs = daoCurs.ObtineCursDinData(DateTime.Now.ToString("yyyy-MM-dd"));
+            DaoCurs daoCurs = DaoCurs.Instance;
+            listaCurs = daoCurs.ObtineCursDinData(_dateTimeProvider.DateTimeNow.ToString("yyyy-MM-dd"));
 
-            //if (listaCurs.Count == 0)
-            await Task.Run(async () =>
+            if (listaCurs.Count == 0)
             {
-                listaCurs = await Net.PreiaCurs(Net.URL_ADRESA10);
-                //listaCurs = await Net.PreiaCurs(Net.URL_ADRESA);
+                //listaCurs = await Net.PreiaCurs(Net.URL_ADRESA10);
+                listaCurs = await Net.PreiaCurs(Net.URL_ADRESA);
                 daoCurs.AdaugaListaCurs(listaCurs);
-            });
+            }
+
 
             listViewCurs.ItemsSource = listaCurs;
             BindingContext = listaCurs[0];
@@ -52,7 +55,7 @@ namespace AppCursValutar
 
         private void Istoric_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new IstoricPage());
+            Navigation.PushAsync(new IstoricPage(listaCurs));
         }
 
         private void Setari_Clicked(object sender, EventArgs e)
