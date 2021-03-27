@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCursValutar.DesprePage"
+             Title="Despre">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Curs valutar 1.0"
+                   FontSize="Large"
+                   TextColor="DarkCyan"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="CenterAndExpand"/>
+            <Image>
+                <Image.Source>
+                    <OnPlatform x:TypeArguments="FileImageSource">
+                        <On Platform="Android, iOS">Logo.png</On>
+                        <On Platform="UWP">Assets/Logo.png</On>
+                    </OnPlatform>
+                </Image.Source>
+            </Image>
+            <Label Text="PDM Curs 2021"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

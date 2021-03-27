@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCursValutar.ConvertorPage"
+             Title="Convertor">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Converteste"/>
+            <Entry Grid.Row="1" Grid.Column="0" Placeholder="Valoarea de convertit" x:Name="entryValoare"/>
+            <Picker Grid.Row="1" Grid.Column="1" Title="Selectati valuta" x:Name="pickerSursa"/>
+            <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Text="In" />
+            <Entry Grid.Row="3" Grid.Column="0" Text="0" IsReadOnly="True" x:Name="entryDestinatie"/>
+            <Picker Grid.Row="3" Grid.Column="1" Title="Selectati valuta" x:Name="pickerDestinatie"/>
+            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Text="Converteste" Clicked="ConvertesteBtn_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

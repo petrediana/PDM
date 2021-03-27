@@ -1,0 +1,1 @@
+C:\Users\Peanut\source\PDM\SEMINAR\AppCursValutar\AppCursValutar\AppCursValutar.UWP\AppCursValutar.UWP.csproj;x86

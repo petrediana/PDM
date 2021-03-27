@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppCursValutar.MainPage"
+             Title="Curs valutar">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Convertor" Order="Secondary" Clicked="Convertor_Clicked" />
+        <ToolbarItem Text="Istoric curs" Order="Secondary" Clicked="Istoric_Clicked" />
+        <ToolbarItem Text="Setari" Order="Secondary" Clicked="Setari_Clicked" />
+        <ToolbarItem Text="Despre" Order="Secondary" Clicked="Despre_Clicked" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <Label Text="{Binding Data, StringFormat='Cursul valutar din data: {0}'}"/>
+        <ListView x:Name="listViewCurs">
+            <!--
+            
+            XXXXX | 100 | HUF  | = | 1.3122 | RON
+            Image | Label | Label | Label
+            
+            -->
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal">
+                            <OnPlatform x:TypeArguments="View">
+                                <On Platform="Android, iOS">
+                                    <Image Source="{Binding Drapel}"/>
+                                </On>
+                                
+                                <On Platform="UWP">
+                                    <Image Source="{Binding Drapel, StringFormat= 'Assets/{0}'}"/>
+                                </On>
+                            </OnPlatform>
+        
+                            <Label Text="{Binding Multiplicator}"/>
+                            <Label Text="{Binding Valuta}"/>
+                            <Label Text="{Binding Valoare, StringFormat='= {0} RON'}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
